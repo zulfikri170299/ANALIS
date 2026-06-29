@@ -19,6 +19,7 @@ services:
       - DB_PASSWORD=${DB_PASSWORD:-}
     depends_on:
       - db
+    volumes:
       - appstorage:/var/www/html/storage
 
   db:
