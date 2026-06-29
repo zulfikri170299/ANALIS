@@ -43,7 +43,6 @@ RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 # Menghapus composer.lock yang bermasalah dan menjalankan install ulang
 RUN rm -f composer.lock && composer install --optimize-autoloader --no-dev
 
-# Build aset Vite (opsional, diperlukan jika belum di-build di lokal)
-RUN npm install && npm run build
+# Aset Vite akan dikompilasi secara lokal dan disertakan dalam repositori
 
 EXPOSE 80
