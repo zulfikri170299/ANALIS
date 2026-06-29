@@ -40,8 +40,8 @@ COPY . .
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Menjalankan composer update
-RUN composer update --no-dev --optimize-autoloader
+# Menghapus composer.lock yang bermasalah dan menjalankan install ulang
+RUN rm -f composer.lock && composer install --optimize-autoloader --no-dev
 
 # Build aset Vite (opsional, diperlukan jika belum di-build di lokal)
 RUN npm install && npm run build
