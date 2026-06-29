@@ -1,0 +1,16 @@
+.git
+.idea
+.vscode
+vendor/
+node_modules/
+public/build/
+public/hot
+.env
+phpunit.xml
+storage/logs/*.log
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/testing/*
+storage/framework/views/*
+npm-debug.log
+yarn-error.log
