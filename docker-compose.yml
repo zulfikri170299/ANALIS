@@ -19,10 +19,7 @@ services:
       - DB_PASSWORD=${DB_PASSWORD:-}
     depends_on:
       - db
-    volumes:
-      - .:/var/www/html
-      - /var/www/html/vendor
-      - /var/www/html/node_modules
+      - appstorage:/var/www/html/storage
 
   db:
     image: mysql:8.0
@@ -39,3 +36,4 @@ services:
 
 volumes:
   dbdata:
+  appstorage:
