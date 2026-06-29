@@ -304,7 +304,7 @@
                 <h1>Sistem Informasi<br><span>ANALIS</span> Terpadu</h1>
                 <p>Platform analitik dan manajemen data generasi terbaru. Didukung oleh antarmuka yang intuitif dan performa tinggi untuk mempermudah pekerjaan Anda.</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">Masuk ke Sistem</a>
+                    <a href="{{ route('login') }}" class="btn btn-primary">Masuk ke Sistem</a>
                     <a href="#" class="btn btn-outline">Pelajari Lebih Lanjut</a>
                 </div>
             </div>
