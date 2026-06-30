@@ -42,7 +42,7 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard', [
         'cryptos' => $coins
     ]);
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::get('/coins/{symbol}', function ($symbol, \App\Services\CryptoApiService $apiService) {
     $coin = Coin::leftJoin('analysis_results', 'coins.id', '=', 'analysis_results.coin_id')
@@ -79,7 +79,7 @@ Route::get('/coins/{symbol}', function ($symbol, \App\Services\CryptoApiService 
         'chartData' => $chartData,
         'currentFilter' => $filter
     ]);
-})->middleware(['auth', 'verified'])->name('coins.show');
+})->middleware(['auth'])->name('coins.show');
 
 Route::get('/debug-chart/{symbol}', function ($symbol, \App\Services\CryptoApiService $apiService) {
     $coin = Coin::where('symbol', strtoupper($symbol))->firstOrFail();
