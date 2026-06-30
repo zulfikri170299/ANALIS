@@ -123,7 +123,7 @@ class FetchCryptoData extends Command
     private function processAlerts($coin)
     {
         $activeAlerts = \App\Models\Alert::where('coin_id', $coin->id)
-            ->where('is_active', true)
+            ->where('status', 'active')
             ->get();
 
         foreach ($activeAlerts as $alert) {
@@ -137,7 +137,7 @@ class FetchCryptoData extends Command
 
             if ($triggered) {
                 // Mark alert as triggered (inactive)
-                $alert->update(['is_active' => false]);
+                $alert->update(['status' => 'triggered']);
                 $this->info("  -> Alert Triggered! {$coin->symbol} went {$alert->condition} {$alert->target_price}");
                 // Here we could dispatch an email or push notification job
             }
