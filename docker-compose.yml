@@ -8,6 +8,7 @@ services:
     image: analis-app
     container_name: analis-app
     restart: unless-stopped
+    env_file: .env
     ports:
       - "8000:80"
     environment:
@@ -20,6 +21,7 @@ services:
     depends_on:
       - db
     volumes:
+      - ./.env:/var/www/html/.env
       - appstorage:/var/www/html/storage
 
   db:

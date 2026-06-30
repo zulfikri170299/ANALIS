@@ -3,7 +3,7 @@
 .vscode
 vendor/
 node_modules/
-public/build/
+
 public/hot
 .env
 phpunit.xml
